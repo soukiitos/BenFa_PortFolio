@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BenFa Products</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: bisque;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            .payment-form {
+                background-color: azure;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+            input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 16px;
+                box-sizing: border-box;
+                border-radius: 8px;
+            }
+            input:hover {
+                background-color: lightblue;
+            }
+            button {
+                background-color: lightslategray;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 100%;
+            }
+            button:hover {
+                background-color: lightskyblue;
+            }
+        </style>
+    </head>
+    <body>
+      <div class="payment-form">
+        <h2>Payment Details<i class="bi bi-wallet2"></i></h2>
+        <form action="/process_payment" method="post">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+            <label for="card-holder">Card Holder Name:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="Elon Musk" required>
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="DD/MM/YY" required>
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            <button type="submit">Submit The Payment</button>
+        </form>
+      </div>
+    
+    </body>
+</html>

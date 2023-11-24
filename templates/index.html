@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BenFa Home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <style type="text/css">
+          body {
+            margin: 100px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: azure;
+          }
+          .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #56aaff;
+            padding: 15px 0;
+            position: relative;
+            overflow: hidden;
+          }
+          .menu-item {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 1;
+          }
+          .menu-item::before{
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #673ab7;
+            transition: width 0.3s ease-in-out;
+          }
+          .menu-item:hover::before {
+            width: 100%;
+            background-color: darkslategray;
+          }
+          .indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(50, 179, 133), transparent, rgba(255, 0, 0));
+            animation: shimmer 3s infinite;
+            pointer-events: none;
+          }
+          @keyframes shimmer {
+            0% {
+              transform: translateX(-150%);
+            }
+            100% {
+              transform: translateX(150%);
+            }
+          }
+        </style>
+    </head>
+    <body>
+      <div class="menu">
+        <a href="#" class="menu-item">Home</a>
+        <a href="#" class="menu-item">About</a>
+        <a href="#" class="menu-item">Services</a>
+        <a href="#" class="menu-item">Contact</a>
+        <a href="#" class="menu-item">Order</a>
+        <div class="indicator"></div>
+      </div>
+      <div><h1>Welcome to BenFa e-commerce application </h1></div>
+      <div>
+        <ul>
+            <button><i class="bi bi-wallet2"></i></button>
+            <button><i class="bi bi-instagram"></i></button>
+            <button><i class="bi bi-whatsapp"></i></button>
+            <button><i class="bi bi-twitter-x"></i></button>
+            <button><i class="bi bi-twitch"></i></button>
+            <button><i class="bi bi-youtube"></i></button>
+        </ul>
+      </div>
+      <p>This is the home page</p>
+      <footer>
+        This is the footer
+      </footer>
+    </body>
+</html>
