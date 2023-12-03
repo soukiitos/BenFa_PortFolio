@@ -3,64 +3,76 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Page</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <style>
-          body {
-                font-family: Arial, sans-serif;
-                background-color: bisque;
-                margin: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-            }
-            .container {
-              background-color: beige;
-              padding: 20px;
-              border-radius: 8px;
-              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            form {
-              display: flex;
-              flex-direction: column;
-            }
-            label {
-              margin-bottom: 8px;
-            }
-            input {
-              padding: 8px;
-              margin-bottom: 16px;
-              border-radius: 8px;
-            }
-            input:hover {
-                background-color: lightblue;
-            }
-            button {
-                background-color: lightslategray;
-                color: #fff;
-                padding: 10px;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                width: 100%;
-            }
-            button:hover {
-                background-color: lightskyblue;
-            }
-        </style>
+        <title>Contact Page</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
     </head>
     <body>
+      <a href="{{ url_for('homepage')}}" class="logo" target="_blank">
+        <img src="/static/images/logo.png" alt="">
+      </a>
+    <div class="section">
       <div class="container">
-        <form action="/login" method="post">
-          <h2>Login<i class="bi bi-person-fill"></i></h2>
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required>
-          <button type="submit">Login</button>
-        </form>
-      </div>
-    </body>
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                    <label for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Log In</h4>
+                        <div class="form-group">
+                          <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4">Submit</a>
+                                      <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                          </div>
+                        </div>
+                      </div>
+                  <div class="card-back">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Sign Up</h4>
+                        <div class="form-group">
+                          <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                          <i class="input-icon uil uil-user"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <a href="{{ url_for('upload')}}">
+                            <i class="bi bi-person-badge">Your Picture</i>
+                          </a>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>	
+                        <div class="form-group mt-2">
+                          <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4">Submit</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  <!-- partial -->
+    <script  src="static/scripts/script.js"></script>
+  </body>
 </html>

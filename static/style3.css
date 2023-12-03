@@ -1,0 +1,289 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+form {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+label:hover {
+    background-color: #2980b9;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#profile-picture {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+input[type="submit"]:hover::before {
+    content: "Click to Upload";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover::after {
+    opacity: 1;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  nav {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  nav ul.navigation-menu {
+    display: flex;
+    background-color: #264653;
+    color: white;
+    height: 50px;
+    width: 700px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.1);
+  }
+  nav ul.navigation-menu li {
+    flex: 1;
+  }
+  nav ul.navigation-menu li a {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul.navigation-menu li ul {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    border-radius: 0px;
+    background-color: transparent;
+    flex-direction: column;
+    perspective: 500px;
+    box-shadow: none;
+  }
+  nav ul.navigation-menu li ul li {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+  }
+  nav ul.navigation-menu li ul li ul {
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    width: 200px;
+  }
+  nav ul.navigation-menu li ul li ul li {
+    display: none;
+  }
+  
+  nav ul.navigation-menu li ul li {
+    background-color: #2a9d8f;
+  }
+  nav ul.navigation-menu li ul li ul li {
+    background-color: #144d46;
+  }
+  
+  nav ul.navigation-menu li {
+    transition: all 0.3s ease-in-out;
+  }
+  nav ul.navigation-menu li:hover {
+    background-color: #1e3742;
+  }
+  nav ul.navigation-menu li:hover ul li {
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+  nav ul.navigation-menu li:hover ul li:hover {
+    background-color: #1f756a;
+  }
+  nav ul.navigation-menu li:hover ul li ul li {
+    display: none;
+  }
+  nav ul.navigation-menu li:hover ul li:hover ul li {
+    display: block;
+  }
+  
+  nav ul.navigation-menu li:hover ul li:nth-child(1) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(2) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(3) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(4) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 400ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(5) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(6) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(7) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 700ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(8) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 800ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(9) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 900ms;
+    animation-fill-mode: forwards;
+  }
+  nav ul.navigation-menu li:hover ul li:nth-child(10) {
+    animation-name: menu-1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 300ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes menu-1 {
+    0% {
+      transform: translateY(20px) rotateY(90deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    position: fixed;
+	bottom: 0;
+	height: 60px;
+	width: 100%;
+	text-align: center;
+	line-height: 60px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer button:hover {
+    background-color: #777;
+}
+
+/* Style for the icons */
+footer i {
+    font-size: 24px;
+}

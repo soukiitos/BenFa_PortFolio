@@ -1,15 +1,45 @@
 from flask import Flask, render_template, request, redirect, url_for
-from models.user import db as user_db, User
+from flask_sqlalchemy import SQLAlchemy
+from extensions import db
+from models.user import User
+from models.order import Order
+from models.product import Product
+from models.payment import Payment
 import os
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_']
+# Configuration for Flask-SQLAlchemy with MySQL
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://benfa:kiitos@localhost/benfa_db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize the db instance with the app
+db.init_app(app)
+
+# Create tables in db
+with app.app_context():
+    db.create_all()
 
 @app.route('/')
 def homepage():
     return render_template('index.html')
 
+@app.route('/auth', methods=['GET'])
+def log_user():
+    return render_template('login.html')
+
+@app.route('/payment', methods=['GET'])
+def auth_user():
+    return render_template('payment.html')
+
+@app.route('/api/orders', methods=['POST'])
+def create_order():
+    return render_template('order.html')
+
+@app.route('/api/products', methods=['GET'])
+def all_products():
+    products = Product.query.all()
+    return jsonify([product.__dict__ for product in products])
 @app.route('/about')
 def about():
     return "This application is about BenFa e-commerce"
