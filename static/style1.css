@@ -43,6 +43,7 @@ body {
 .field-container input {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .field-container {
@@ -575,4 +576,19 @@ footer button:hover {
 /* Style for the icons */
 footer i {
     font-size: 24px;
+}
+
+.logo {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	display: block;
+	z-index: 100;
+	transition: all 250ms linear;
+}
+.logo img {
+	height: 50px;
+	width: auto;
+	display: block;
+  border-radius: 50px;
 }

@@ -3,43 +3,81 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BenFa Home</title>
-        <script src="https://kit.fontawesome.com/70745388b4.js"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-      </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <title>BenFa Portfolio</title>
+    </head>
     <body>
-      <label for="theme" class="theme">
-        <span>Light</span>
-        <span class="theme__toggle-wrap">
-            <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
-            <span class="theme__fill"></span>
-            <span class="theme__icon">
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-                <span class="theme__icon-part"></span>
-            </span>
-        </span>
-        <span>Dark</span>
-    </label>
-      <div class="container">
-        <nav>
-          <div class="nav-logo">
-            <img src="static/images/logo.png">
-          </div>
-          <div class="nav-links">
-            <a href="{{ url_for('homepage') }}">Home</a>
-            <div>
-              <a href="{{ url_for('log_user') }}">Login</a>
-              <a href="{{ url_for('log_user') }}">Sign Up</a>
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <h1>BenFa<span>Portfolio</span></h1>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('auth_user') }}">Payment</a></li>
+                        <li><a href="{{ url_for('all_products') }}">Products</a></li>
+                        <li><a href="{{ url_for('create_order') }}">Orders</a></li>
+                    </ul> 
+                </div>
+                <a href="{{ url_for('log_user') }}" class="btn">Login</a>
+            </header>
+            <div class="main-content">
+                <div class="main">
+                    <div class="left">
+                        <div class="line"></div>
+                        <h1>Welcome to BenFa</h1>
+                        <h2>A <span class="auto-type"></span></h2>
+                        <p>Welcome to BenFa, You need a specific product? Click below</p>
+                        <a href="{{ url_for('all_products') }}" class="btn" target="_blank" rel="noopener noreferrer">Products</a>
+                        <p>You wanna order a product? Click here: <a href="{{ url_for('create_order') }}" class="btn" target="_blank" rel="noopener noreferrer">Orders</a></p>
+                        
+                      </div>
+                <div class="right">
+                    <div class="image">
+                        <img src="static/images/logo.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-        </nav>
+            
+        </div>
+        
+    </div>
+    <div class="social">
+      <div class="social-link">
+          <i class="fa-brands fa-instagram"></i>
       </div>
+      <div class="social-link">
+          <a href="https://www.linkedin.com/in/soukaina-lachheb-6a1a1a239" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="social-link">
+          <a href="https://x.com/SoukainaLa08?t=KnZcFbHVTKwVJJa4y2KHSQ&s=09" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <div class="social-link">
+          <a href="https://t.me/Soukiitos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i></a>
+      </div>
+      <div class="social-link">
+          <a href="https://github.com/soukiitos/BenFa_PortFolio" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+      </div>
+  </div>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings:["An E-Commerce Website", "intermediary between the buyer and seller", "Guide to people all ages, for a better life"],
+            typeSpeed:150,
+            backSpeed:150,
+            loop:true
+        })
+    </script>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
