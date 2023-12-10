@@ -40,9 +40,17 @@ def create_order():
 def all_products():
     products = Product.query.all()
     return jsonify([product.__dict__ for product in products])
+
+    
 @app.route('/about')
 def about():
-    return "This application is about BenFa e-commerce"
+    return render_template('about.html')
+    # return "This application is about BenFa e-commerce"
+
+
+@app.route('/more')
+def more_details():
+    return render_template('More_Details.html')
 
 @app.route('/Be/<text>', strict_slashes=False)
 def cisfun(text):

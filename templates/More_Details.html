@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style5.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <title>BenFa Portfolio</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="right">
+                    <div class="abc">
+                        <img src="static/images/logo.png" alt="">
+                    </div>
+                </div>
+                <div class="logo">
+                    <h1>BenFa<span>Portfolio</span></h1>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('auth_user') }}">Payment</a></li>
+                        <li><a href="{{ url_for('all_products') }}">Products</a></li>
+                        <li><a href="{{ url_for('create_order') }}">Orders</a></li>
+                    </ul> 
+                </div>
+                <a href="{{ url_for('log_user') }}" class="btn">Login</a>
+            </header>
+            <div class="main-content">
+                <div class="main">
+                    <div class="left">
+                        <div class="line"></div>
+                        
+                        <div><p>
+                            <h3>Welcome to BenFa<br></h3>
+                            <i><h4>Who we are?<br></h4></i>
+                            <i><b>I am Soukaina Lachheb the Developer of BenFa project. the name BenFa came from the name of my parents, So this project is so precious for me.<br></b></i>
+                            <i><h4>What we do?</h4></i>
+                            <i><b>We act as an intermediary between the buyer and seller, and we bring the world closer to everyone who needs anything, wether they want to buy or sell.</b></i>
+                            <i><h4>Why shoosingus?</h4></i>
+                            <i><b>We make life easier for people all ages, and help them to connect and choose whatever they want, and respect every detail for our users, and we respect their private life.</b></i>
+                            <i><h4>Timeline</h4></i>
+                            <i><b>I have completed almost the 70% of my project, still have just some databases to add and work more in products and orders pages, and the project will be complete soon</b></i>
+                            <i><h4>Homepage</h4></i>
+                            <i><b>This is the page the user will face in first sight:</b></i>
+                            <img src="" alt="">
+                            <i><h4>Product area</h4></i>
+                            <i><p>here where the user can add some products</p></i>
+                            <img src="" alt="">
+                            <i><h4>Payement area</h4></i>
+                            <i><b>In this part i make a lot of kind of carts, here is just two examples:</b></i>
+                            <img src="" alt="">
+                            <img src="" alt="">
+                        </p></div>
+                        
+                </div>
+                
+            </div>
+            <div class="social">
+                <div class="social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="social-link">
+                    <a href="https://www.linkedin.com/in/soukaina-lachheb-6a1a1a239" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="social-link">
+                    <a href="https://x.com/SoukainaLa08?t=KnZcFbHVTKwVJJa4y2KHSQ&s=09" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="social-link">
+                    <a href="https://t.me/Soukiitos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+                <div class="social-link">
+                    <a href="https://github.com/soukiitos/BenFa_PortFolio" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings:["Developer", "Software Engineer", "Creator"],
+            typeSpeed:150,
+            backSpeed:150,
+            loop:true
+        })
+    </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
