@@ -16,6 +16,7 @@
         <h1>Payment Information</h1>
     </div>
     <div class="container preload">
+        <form method="POST" action="{{ url_for('auth_user')}}">
         <div class="creditcard">
             <div class="front">
                 <div id="ccsingle"></div>
@@ -135,10 +136,22 @@
             <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
         </div>
         <button type="submit">Submit</button>
+       </form>
     </div>
+    
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js'></script>
   <script src="./static/scripts/script1.js"></script>
-  
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-success">
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endwith %}
 </body>
 </html>

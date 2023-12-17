@@ -24,14 +24,14 @@
 
 .logo h1{
     font-size: 25px;
-    color: #98c1d9;
+    color: #4ea1d5;
     font-weight: 600;
     cursor: pointer;
     letter-spacing: 0.1em;
 }
 
 .logo span{
-    color: #e0fbfc;
+    color: #dff1f1;
 }
 
 .nav-links ul{
@@ -101,25 +101,25 @@
 
 .line{
     width: 80px;
-    border-bottom: 8px solid #ee6c4d;
+    border-bottom: 8px solid #4ea1d5;
     margin-bottom: 30px;
 }
 
 .main h1{
     text-transform: uppercase;
     font-size: 50px;
-    color: #98c1d9;
+    color: #b2cfe2;
     line-height: 1;
 }
 
 .main h2{
    font-size: 40px; 
-   color: #98c1d9;
+   color: #4ea1d5;
    margin-bottom: 50px;
 }
 
 .main span{
-    color: #ee6c4d;
+    color: #4ea1d5;
 }
 
 .main p{
@@ -136,8 +136,8 @@
 
 .image{
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     border: 50px solid #ee6c4d;
     z-index: 8888;
@@ -166,7 +166,7 @@
 
 .social{
     position: absolute;
-    bottom: 17%;
+    bottom: 10%;
     left: 14%;
     display: flex;
     justify-content: left;
@@ -181,7 +181,7 @@
 }
 
 .social i:hover{
-    color: #ee6c4d;
+    color: #671905;
     scale: 105%;
 }
 
@@ -199,6 +199,6 @@
 }
 
 .social .social-link:hover{
-    border: 2px solid #ee6c4d;
+    border: 2px solid #842209;
     scale: 105%;
 }

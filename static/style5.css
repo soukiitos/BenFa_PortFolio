@@ -118,7 +118,7 @@
     height: 100%;
 }
 
-.main{
+/*.main{
     position: relative;
     width: 1400px;
     height: 80%;
@@ -126,7 +126,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+}*/
 
 .line{
     width: 80px;
@@ -157,13 +157,14 @@
     color: #e0fbfc;
     margin-bottom: 30px;
     letter-spacing: 0.05em;
+    text-align: justify;
 }
 
 .right{
     /* position: relative; */
 }
 
-.image{
+/*.image{
     position: relative;
     width: 450px;
     height: 450px;
@@ -171,7 +172,7 @@
     border: 50px solid #ee6c4d;
     z-index: 8888;
     animation: anim 3s linear infinite;
-}
+}*/
 
 @keyframes anim{
     0%{
@@ -185,17 +186,17 @@
     }
 }
 
-.image img{
+/*.image img{
     margin-top: -10px;
     margin-left: 5px;
     width: 100%;
     transform: scale(1.4);
     border-radius: 50%;
-}
+}*/
 
 .social{
     position: absolute;
-    bottom: 17%;
+    bottom: 10%;
     left: 14%;
     display: flex;
     justify-content: left;
@@ -230,4 +231,18 @@
 .social .social-link:hover{
     border: 2px solid #ee6c4d;
     scale: 105%;
+}
+
+
+/* Additional styles for images within paragraphs */
+.main img.homepage-image {
+    width: 50%; /* Adjust the width if needed for specific images */
+    border: 2px solid #ee6c4d; /* Add a border for a framed look */
+}
+
+.main img.homepage-image {
+    max-width: 100%; /* Make sure images don't overflow their container */
+    margin-bottom: 20px; /* Add spacing between images and text */
+    border-radius: 10px; /* Add border radius for a rounded look if desired */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
 }

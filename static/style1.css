@@ -1,27 +1,29 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #293241;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-line-pack: center;
-        align-content: center;
+    align-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     min-height: 100vh;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     font-family: 'Raleway';
 }
 
 .payment-title {
     width: 100%;
     text-align: center;
+    font-size: 15px;
+    color: navajowhite;
 }
 
 .form-container .field-container:first-of-type {
@@ -58,7 +60,8 @@ body {
     grid-template-areas: "name name""number number""expiration security";
     max-width: 400px;
     padding: 20px;
-    color: #707070;
+    color: navajowhite;
+    font-size: 10px;
 }
 
 label {
@@ -83,7 +86,7 @@ input {
     width: 60px;
 }
 
-/* CREDIT CARD IMAGE STYLING */
+/* Credit Card styling image*/
 .preload * {
     transition: none !important;
 }
@@ -127,7 +130,7 @@ input {
     float:right;
 }
 
-/* CHANGEABLE CARD ELEMENTS */
+/* Credit card elements changing*/
 .creditcard .lightcolor,
 .creditcard .darkcolor {
     -webkit-transition: fill .5s;
@@ -206,7 +209,7 @@ input {
     fill: #616161;
 }
 
-/* FRONT OF CARD */
+/* Credit card front */
 #svgname {
     text-transform: uppercase;
 }
@@ -259,7 +262,7 @@ input {
     fill: #4C4C4C;
 }
 
-/* BACK OF CARD */
+/* Credit Card back*/
 #cardback .st0 {
     fill: none;
     stroke: #0F0F0F;
@@ -315,7 +318,7 @@ input {
     font-size: 37.769px;
 }
 
-/* FLIP ANIMATION */
+/* The flip animation*/
 .container {
     perspective: 1000px;
 }
@@ -353,20 +356,21 @@ input {
     transform: rotateY(180deg);
 }
 
-/* Style for the submit button */
+/*Style for the submit button */
 button {
-    background-color: #4caf91; /* Green background color */
-    color: white; /* White text color */
-    padding: 15px 20px; /* Padding */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    background-color: #4caf91;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
 }
 
 /* Hover effect for the submit button */
 button:hover {
-    background-color: #97a045; /* Darker green on hover */
+    background-color: navajowhite;
 }
 
 ul {
@@ -541,42 +545,6 @@ ul {
       opacity: 1;
     }
   }
-  
-  footer {
-    background-color: #757070;
-    color: white;
-    position: fixed;
-	bottom: 0;
-	height: 60px;
-	width: 100%;
-	text-align: center;
-	line-height: 30px;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 4px;
-}
-
-footer button {
-    /* background-color: #555; */
-    color: white;
-    border: none;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-    /* transition: background-color 0.3s;*/
-}
-
-footer button:hover {
-    background-color: #777;
-}
-
-/* Style for the icons */
-footer i {
-    font-size: 24px;
-}
 
 .logo {
 	position: absolute;

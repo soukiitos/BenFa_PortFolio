@@ -1,6 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from extensions import db
 
 class Product(db.Model):
     product_id = db.Column(db.Integer, primary_key=True)

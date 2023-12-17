@@ -5,22 +5,50 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BenFa Orders</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style6.css') }}">
     </head>
     <body>
-      <h1>Welcome to BenFa e-commerce Order section </h1>
-      <div>
-        <ul>
-            <i class="bi bi-shop">Shop</i>
-            <ul>
-            <i class="bi bi-wallet2">Your Wallet</i>
-            <i class="bi bi-truck">Put your products in this truck</i>
-            <i class="bi bi-upload">Upload your products</i>
-            <i class="bi bi-trash">Delete</i>
-            </ul>
-        </ul>
-      </div>
-      <div><button>Order</button></div>
-      <p>Put your orders here</p>
+      <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>BenFa<span>Portfolio</span></h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('auth_user') }}">Payment</a></li>
+                    <li><a href="{{ url_for('all_products') }}">Products</a></li>
+                    <li><a href="{{ url_for('other_order') }}">Items</a></li>
+                </ul> 
+            </div>
+            <a href="{{ url_for('log_user') }}" class="btn">Login</a>
+        </header>
+        <div class="main-content">
+            <div class="main">
+              <h1>Welcome to BenFa e-commerce Order section </h1>
+              <div>
+                <ul>
+                    <i class="bi bi-shop">Shop</i>
+                    <ul>
+                    <i class="bi bi-wallet2">Your Wallet</i>
+                    <i class="bi bi-truck">Put your products in this truck</i>
+                    <i class="bi bi-upload">Upload your products</i>
+                    <i class="bi bi-trash">Delete</i>
+                    </ul>
+                </ul>
+              </div>
+              <div><button>Order</button></div>
+              <p>Put your orders up here</p>
+            <div class="right">
+                <div class="image">
+                    <img src="static/images/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+      
     </body>
 </html>

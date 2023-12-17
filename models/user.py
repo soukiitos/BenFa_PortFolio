@@ -1,6 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from extensions import db
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -9,4 +7,4 @@ class User(db.Model):
     password = db.Column(db.String(255), nullable=False)
     First_name = db.Column(db.String(255))
     last_name = db.Column(db.String(255))
-    role = db.Column(db.String(25), default='seller' 'buyer')
+    role = db.Column(db.String(25))

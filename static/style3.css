@@ -5,7 +5,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
+    background-color: #293241;
 }
 
 form {
@@ -252,38 +252,3 @@ ul {
       opacity: 1;
     }
   }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    position: fixed;
-	bottom: 0;
-	height: 60px;
-	width: 100%;
-	text-align: center;
-	line-height: 60px;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer button {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-footer button:hover {
-    background-color: #777;
-}
-
-/* Style for the icons */
-footer i {
-    font-size: 24px;
-}
