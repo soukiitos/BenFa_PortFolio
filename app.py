@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from forms import ProductForm, OrderForm, UserForm, PaymentForm
+from werkzeug.utils import secure_filename
+from flask_cors import CORS
 from extensions import db
 from models.user import User
 from models.order import Order
@@ -10,6 +12,7 @@ import os
 import secrets
 
 app = Flask(__name__)
+CORS(app)
 
 # Configuration for Flask-SQLAlchemy with MySQL
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://benfa:kiitos@localhost/benfa_db'
@@ -146,27 +149,52 @@ def all_products():
     form = ProductForm()
 
     if request.method == 'POST' and form.validate_on_submit():
+        print('Form data:', request.form)
+        # Handle the image upload
+        image = form.image.data
+        image_path = None
+        if image:
+            filename = secure_filename(image.filename)
+            image_path = os.path.join(app.config['UPLOAD_Product_Image'], filename)
+            image.save(image_path)
+
         # Add a new product to the database
-        new_product = Product(
-            name=form.name.data,
-            category=form.category.data,
-            price=form.price.data,
-            description=form.description.data
-        )
-        db.session.add(new_product)
-        db.session.commit()
+        if form.product_id.data:
+            product = Product.query.get(form.product_id.data)
+            if product:
+                product.name = form.name.data
+                product.category = form.category.data
+                product.price = form.price.data
+                product.description = form.description.data
+                product.image = image_path
+                db.session.commit()
+        else:
+            new_product = Product(
+                    name=form.name.data,
+                    category=form.category.data,
+                    price=form.price.data,
+                    description=form.description.data,
+                    image=image_path
+                    )
+            db.session.add(new_product)
+            db.session.commit()
 
-        # Return the new product as JSON
-        return jsonify({
-            'name': new_product.name,
-            'category': new_product.category,
-            'price': new_product.price,
-            'description': new_product.description
-        })
+        # Fetch all products
+        products = Product.query.all()
 
+        # Return JSON response
+        if request.is_xhr:
+            response_data = {
+                    'status': 'success',
+                    'message': 'The Product Added Successfully',
+                    'products': [{'name': product.name, 'category': product.category,
+                        'price': product.price} for product in products]
+                    }
+            return jsonify(response_data)
     # Fetch all products
     products = Product.query.all()
 
+    # Return html template
     return render_template('product.html', products=products, form=form)
 
     

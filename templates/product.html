@@ -70,7 +70,8 @@
                 <strong>Name:</strong> {{ product.name }}<br>
                 <strong>Category:</strong> {{ product.category }}<br>
                 <strong>Price:</strong> ${{ product.price }}<br>
-                <strong>Description:</strong> {{ product.description }}
+		<strong>Description:</strong> {{ product.description }}<br>
+		<strong>Product's Image:</strong> {{ product.image }}
             </li>
         {% endfor %}
     </ul>
@@ -83,6 +84,7 @@
         <label for="category">Product Category:</label>{{ form.category() }}<br>
         <label for="price">Product Price:</label>{{ form.price() }}<br>
         <label for="description">Product Description:</label>{{ form.description() }}<br>
+	<label for="image">The Image of the Product:</label>{{ form.image() }}<br>
         {{ form.submit() }}
     </form>
     </div>
@@ -366,21 +368,26 @@
   document.addEventListener('DOMContentLoaded', function () {
       // Function to add product dynamicly
       function addProductToList(product) {
+	  console.log('Adding The Product to List:', product);
           const productList = document.getElementById('productList');
           const newProduct = document.createElement('li');
           newProduct.innerHTML = `
               <li style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background-color: aquamarine;">
+	          <strong>Product ID:</strong> ${product.product_id}<br>
                   <strong>Name:</strong> ${product.name}<br>
                   <strong>Category:</strong> ${product.category}<br>
                   <strong>Price:</strong> $${product.price}<br>
-                  <strong>Description:</strong> ${product.description}
+		  <strong>Description:</strong> ${product.description}<br>
+		  <strong>Product's Image:</strong> ${product.image}
               </li>
           `;
           productList.appendChild(newProduct);
+	  console.log('The Product added to the List', product);
       }
 
       // Event lisener from submission
       document.getElementById('addProductForm').addEventListener('submit', function (event) {
+	  console.log('Form submitted');
           event.preventDefault();
 
           // Fetch from data
@@ -398,7 +405,10 @@
               },
               body: JSON.stringify(formObject),
           })
-          .then(response => response.json())
+          .then(response => {
+		  console.log('Response status:', response.status);
+		  return response.json();
+	  })
           .then(product => {
               // Add the new product dynamicly
               addProductToList(product);

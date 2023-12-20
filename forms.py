@@ -1,14 +1,19 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, FloatField, TextAreaField, SubmitField, SelectField
+from wtforms import HiddenField, StringField, FloatField, TextAreaField, SubmitField, SelectField
 from wtforms_components import DateField
 from wtforms.validators import DataRequired, Length
+from flask_wtf.file import FileField, FileAllowed
 
 class ProductForm(FlaskForm):
     # ProductForm class
-    name = StringField('Product Name')
-    category = StringField('Product Category')
-    price = FloatField('Product Price')
-    description = TextAreaField('Product Description')
+    product_id = HiddenField('Product ID')
+    name = StringField('Product Name', validators=[DataRequired()])
+    category = StringField('Product Category', validators=[DataRequired()])
+    price = FloatField('Product Price', validators=[DataRequired()])
+    description = TextAreaField('Product Description', validators=[DataRequired()])
+    image = FileField('Product Image', validators=[
+        FileAllowed(['jpg', 'png', 'jpeg'], 'Image Only Please!')
+        ])
     submit = SubmitField('Add Product')
 
 

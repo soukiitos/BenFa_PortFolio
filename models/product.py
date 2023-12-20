@@ -6,3 +6,4 @@ class Product(db.Model):
     category = db.Column(db.String(255))
     price = db.Column(db.Float)
     description = db.Column(db.Text)
+    image = db.Column(db.String(255))
